@@ -7,12 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
- <frameset rows="18%,*">
- 	<frame src="${pageContext.request.contextPath }/manager/head.jsp">
- 	<frameset  cols="15%,*">
-  		<frame src="${pageContext.request.contextPath }/manager/left.jsp" name="left">
- 		<frame src="#" name="right">
-	</frameset>
- </frameset>
+
 </body>
 </html>

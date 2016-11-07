@@ -1,0 +1,34 @@
+package junit.test;
+
+import org.junit.Test;
+
+import cn.itcast.dao.impl.BookDaoImpl;
+import cn.itcast.domain.Book;
+import cn.itcast.domain.Category;
+import cn.itcast.utils.JdbcUtils;
+
+public class BookDaoTest {
+
+	@Test
+	public void testQuery(){
+		BookDaoImpl dao = new BookDaoImpl();
+		dao.pageQuery(0, 2, "",1 );
+		
+	}
+	
+	@Test
+	public void addBook(){
+		Book book = new Book();
+		book.setAuthor("aaa");
+		book.setDescription("fff");
+		book.setId("4");
+		book.setImage("4");
+		book.setName("4444");
+		book.setPrice(90);
+		book.setCategory(new Category());
+		BookDaoImpl dao = new BookDaoImpl();
+		dao.add(book);
+		//没有提交
+		JdbcUtils.commitTransaction();
+	}
+}

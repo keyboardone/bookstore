@@ -32,11 +32,11 @@
 		
 		2.在WebContent下新建client目录，保存前台相关的jsp
 	
-	3.创建工程所需的库
+		3.创建工程所需的库
 		create database bookstore;
 		use bookstore;
 		
-	4.创建一些全局的工具类和过滤器
+		4.创建一些全局的工具类和过滤器
 		JdbcUtils（操作数据库）
 		WebUtils（将前台获取到的数据封装到bean里面去）
 		CharacterEncodingFilter（解决中文乱码问题）
@@ -44,10 +44,102 @@
 		TransActionFilter（编写事物过滤器，统一管理事务）
 		DaoFactory（产生dao，用于dao接口实现时）
 		
+2.设计实体
+	Category	（分类）
+		private String id;
+		private String name;
+		private String description;
 		
+	Book	（书）
+		private String id;
+		private String name;
+		private double price;
+		private String author;
+		private String image;	//记住书的图片的位置
+		private String description;
+		private Category category;
 		
+	Order	（订单）
+		private String id;
+		private Date ordertime;	//下单时间
+		private boolean state;	//订单状态
+		private double price;	//订单总价
+		private User user;		//记住下单人
+		private Set orderitems;	//记住订单所有订单项
+	
+	OrderItem	（订单项）
+		private String id;
+		private Book book;	//记住订单项代表的是哪本书
+		private int quantity;	//记住订单项中的书出现了几本
+		private double price;	//记录书的总价
 		
+	User	（订单属于的用户）
+		private String id;
+		private String username;
+		private String password;
+		private String cellphone;
+		private String email;
+		private String address;
+		private int integral;	//积分
+		
+3.设计表
+	create table category
+	(
+		id varchar(40) primary key,
+		name varchar(40) not null unique,
+		description varchar(255)
+	);
+	
+	create table book
+	(
+		id varchar(40) primary key,
+		name varchar(40) not null unique,
+		price decimal(8,2) not null,
+		author varchar(40) not null,
+		image varchar(255) not null,
+		description varchar(255),
+		category_id varchar(40),
+		constraint category_id_FK foreign key(category_id) references category(id)
+	);	
+	
+	create table user
+	(
+		id varchar(40) primary key,
+		username varchar(40) not null unique,
+		password varchar(20) not null,
+		cellphone varchar(20) not null,
+		email varchar(40) not null,
+		address varchar(255) not null
+	);	
+	
+	create table orders
+	(
+		id varchar(40) primary key,
+		ordertime datetime not null,
+		state boolean not null,
+		price decimal(8,2) not null,
+		user_id varchar(40),
+		constraint user_id_FK foreign key(user_id) references user(id)
+	);
+		
+	create table orderitem
+	(
+		id varchar(40) primary key,
+		quantity int not null,
+		price decimal(8,2) not null,
+		book_id varchar(40),
+		constraint book_id_FK foreign key(book_id) references book(id),
+		order_id varchar(40),
+		constraint order_id_FK foreign key(order_id) references orders(id)
+	);	
+			
 
+4.写dao
+
+5.写service
+
+6.做web层	
+	
 
 
 

@@ -8,13 +8,14 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
+import cn.itcast.dao.OrderDao;
 import cn.itcast.domain.Book;
 import cn.itcast.domain.Order;
 import cn.itcast.domain.OrderItem;
 import cn.itcast.domain.User;
 import cn.itcast.utils.JdbcUtils;
 
-public class OrderDaoImpl {
+public class OrderDaoImpl implements OrderDao {
 
 	public void add(Order o){
 		try {

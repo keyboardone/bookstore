@@ -5,10 +5,11 @@ import java.sql.Connection;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 
+import cn.itcast.dao.UserDao;
 import cn.itcast.domain.User;
 import cn.itcast.utils.JdbcUtils;
 
-public class UserDaoImpl {
+public class UserDaoImpl implements UserDao {
 
 	public void add(User user){
 		try {

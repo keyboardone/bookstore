@@ -7,10 +7,11 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
+import cn.itcast.dao.CategoryDao;
 import cn.itcast.domain.Category;
 import cn.itcast.utils.JdbcUtils;
 
-public class CategoryDaoImpl {
+public class CategoryDaoImpl implements CategoryDao {
 	
 	public void add(Category c){
 		try {

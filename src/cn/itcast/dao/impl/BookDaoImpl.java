@@ -8,11 +8,12 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 
+import cn.itcast.dao.BookDao;
 import cn.itcast.domain.Book;
 import cn.itcast.domain.QueryResult;
 import cn.itcast.utils.JdbcUtils;
 
-public class BookDaoImpl{
+public class BookDaoImpl implements BookDao{
 
 	public void add(Book b){
 		try{

@@ -110,6 +110,7 @@
 		cellphone varchar(20) not null,
 		email varchar(40) not null,
 		address varchar(255) not null
+		integral int not null
 	);	
 	
 	create table orders

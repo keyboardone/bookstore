@@ -15,5 +15,5 @@ public interface OrderDao {
 	 * state:false: Î´·¢»õ
 	 */
 	List<Order> getAll(boolean state);
-
+	public void update(String id,boolean state);
 }

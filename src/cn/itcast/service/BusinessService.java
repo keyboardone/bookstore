@@ -21,7 +21,7 @@ public interface BusinessService {
 
 	Category findCategory(String id);
 
-	List getAll();
+	List getAllCategory();
 
 	/**************************************
 	 * 
@@ -33,6 +33,8 @@ public interface BusinessService {
 	Book findBook(String id);
 
 	PageBean bookPageQuery(QueryInfo info);
+	
+	public List getAllBook();
 
 	/**************************************
 	 * 
@@ -59,4 +61,5 @@ public interface BusinessService {
 	//得到所有订单
 	List getOrderByState(boolean state);
 
+	public void updateOrder(String id,boolean state);	
 }

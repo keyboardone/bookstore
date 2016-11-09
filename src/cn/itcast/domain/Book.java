@@ -6,7 +6,7 @@ public class Book {
 	private String name;
 	private double price;
 	private String author;
-	private String image;	//记住书的图片的位置
+	private String image;	//记住书的图片的名称
 	private String description;
 	private Category category;
 	public String getId() {

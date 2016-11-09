@@ -5,7 +5,7 @@ public class QueryInfo {
 	//web层带来的数据:当前看的那一页
 	private int currentPage = 1;
 	//每页显示多少条,如果没有设置，就是默认3条
-	private int pagesize = 3;
+	private int pagesize = 6;
 	//算出该页在数据库的起始位置
 	private int startindex;
 	

@@ -100,6 +100,19 @@ public class OrderDaoImpl implements OrderDao {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public void update(String id,boolean state){
+		try{
+			Connection conn = JdbcUtils.getConnection();
+			QueryRunner runner = new QueryRunner();
+			String sql = "update orders set state=? where id=?";
+			Object params[] = {state,id};
+			runner.update(conn,sql,params);
+		}catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		
+	}
 }
 
 

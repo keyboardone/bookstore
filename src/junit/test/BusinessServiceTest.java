@@ -34,7 +34,7 @@ public class BusinessServiceTest {
 	
 	@Test
 	public void testGetAllCategory(){
-		service.getAll();
+		service.getAllCategory();
 	}
 	
 	@Test

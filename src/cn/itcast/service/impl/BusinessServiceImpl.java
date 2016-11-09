@@ -44,7 +44,7 @@ public class BusinessServiceImpl implements BusinessService {
 		return cdao.find(id);
 	}
 	
-	public List getAll(){
+	public List getAllCategory(){
 		return cdao.getAll();
 	}
 	
@@ -72,6 +72,10 @@ public class BusinessServiceImpl implements BusinessService {
 		bean.setTotalrecord(result.getTotalrecord());
 		
 		return bean;
+	}
+	
+	public List getAllBook(){
+		return bdao.getAll();
 	}
 	
 	/**************************************
@@ -136,6 +140,9 @@ public class BusinessServiceImpl implements BusinessService {
 		return odao.getAll(state);
 	}
 	
+	public void updateOrder(String id,boolean state){
+		odao.update(id, state);
+	}
 }
 
 

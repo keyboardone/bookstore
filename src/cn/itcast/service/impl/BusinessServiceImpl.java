@@ -66,7 +66,7 @@ public class BusinessServiceImpl implements BusinessService {
 		
 		//用QueryResult和QueryInfo生成一个页面显示需要的PageBean
 		PageBean bean = new PageBean();
-		bean.setCurrentpage(info.getCurrentPage());
+		bean.setCurrentpage(info.getCurrentpage());
 		bean.setList(result.getList());
 		bean.setPagesize(info.getPagesize());
 		bean.setTotalrecord(result.getTotalrecord());

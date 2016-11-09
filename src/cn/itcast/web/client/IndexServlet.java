@@ -16,7 +16,8 @@ import cn.itcast.utils.WebUtils;
 //获取首页数据
 public class IndexServlet extends HttpServlet {
 	private BusinessService service = new BusinessServiceImpl();
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		QueryInfo info = WebUtils.request2Bean(request, QueryInfo.class);
 		String category_id = request.getParameter("category_id");
@@ -35,7 +36,8 @@ public class IndexServlet extends HttpServlet {
 		
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 

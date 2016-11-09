@@ -26,7 +26,7 @@
     	
     	#categories{
     		border: solid 1px blue;
-    		width: 250px;
+    		width: 200px;
     		padding-left: 20px;
     		height: 400px;
     		line-height: 40px;
